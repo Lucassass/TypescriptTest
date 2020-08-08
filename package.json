@@ -1,6 +1,6 @@
 {
     "name": "mlb-scraper",
-    "version": "1.2.0",
+    "version": "1.0.0",
     "description": "scraping data from mlb matches",
     "scripts": {
         "start": "node ./dist/app.js",
