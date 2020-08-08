@@ -1,10 +1,9 @@
 {
-    "name": "typescript-project",
+    "name": "mlb-scraper",
     "version": "1.2.0",
-    "description": "A template for creating TypeScript projects",
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts",
+    "description": "scraping data from mlb matches",
     "scripts": {
+        "start": "node ./dist/app.js",
         "commit": "git-cz",
         "build": "tsc",
         "test": "npm run lint & npm run prettier",
@@ -15,16 +14,18 @@
         "prepare": "npm run build"
     },
     "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Nicklason/typescript-project.git"
+        "url": "https://github.com/Lucassass/TypescriptTest"
     },
-    "author": "Nicklas Marc Pedersen",
+    "author": "Lucas Sass Rósinberg",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Nicklason/typescript-project/issues"
+        "url": "https://github.com/Lucassass/TypescriptTest/issues"
     },
-    "homepage": "https://github.com/Nicklason/typescript-project#readme",
-    "dependencies": {},
+    "homepage": "https://github.com/Lucassass/TypescriptTest#readme",
+    "dependencies": {
+        "apify": "^0.21.3",
+        "cheerio": "^1.0.0-rc.3"
+    },
     "devDependencies": {
         "@commitlint/cli": "^8.3.5",
         "@commitlint/config-conventional": "^8.3.4",

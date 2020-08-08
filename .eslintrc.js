@@ -15,7 +15,6 @@ module.exports = {
         'plugin:prettier/recommended'
     ],
     rules: {
-        'no-console': 'error',
         'tsdoc/syntax': 'error',
         'prettier/prettier': 'error'
     }
