@@ -27,40 +27,37 @@ Apify.main(async () => {
 
                 const gameStart: string[] = [];
                 gameDiv
-                    .find('div [class="sc-fzoOEf eXkYNB"]')
+                    .find('div[data-mlb-test="gameStartTimesStateContainer"]')
                     .each(function (this: CheerioElement) {
-                        gameStart.push($(this).text());
+                        gameStart.push(
+                            $(this).parent().children().first().text()
+                        );
                     });
 
-                const score1: string[] = [];
+                //needs to add correct way to get results and then find a way to check if its a live game or finished game while still getting scores
+                const scores: string[] = [];
                 gameDiv
-                    .find('div [class="sc-fzqLLg gOxPot"]')
+                    .find('div[class="sc-fznXWL fFPdE"]')
                     .each(function (this: CheerioElement) {
-                        score1.push($(this).text());
-                    });
-
-                const score2: string[] = [];
-                gameDiv
-                    .find('div [class="sc-fzqLLg hPWsUK"]')
-                    .each(function (this: CheerioElement) {
-                        score2.push($(this).text());
+                        scores.push($(this).text());
                     });
 
                 const stats: string[] = [];
                 gameDiv
-                    .find('div [class="sc-qapaw sc-oTmZL fdsmny"]')
+                    .find('div[data-mlb-test="teamNameLabel"]')
                     .each(function (this: CheerioElement) {
-                        stats.push($(this).text());
+                        stats.push($(this).parent().children().last().text());
                     });
-
                 console.log(gameStart);
                 console.log(teams);
-                console.log(score1);
-                console.log(score2);
                 console.log(stats);
+                console.log(scores);
+                console.log('');
             });
         },
+        //amount of request to webpage
         maxRequestsPerCrawl: 10,
+        //amount of puppeters running
         maxConcurrency: 1
     });
 
