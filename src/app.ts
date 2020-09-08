@@ -37,7 +37,7 @@ Apify.main(async () => {
                 //needs to add correct way to get results and then find a way to check if its a live game or finished game while still getting scores
                 const scores: string[] = [];
                 gameDiv
-                    .find('div[class="sc-fznXWL fFPdE"]')
+                    .find('td[data-col="0"]')
                     .each(function (this: CheerioElement) {
                         scores.push($(this).text());
                     });
